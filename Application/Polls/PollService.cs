@@ -1,9 +1,7 @@
-﻿using POVO.Backend.Domains.Polls;
-using System.Drawing;
-using System;
+﻿using POVO.Backend.Domain.Polls;
 using POVO.Backend.Infrastructure.Dtos.Polls;
 
-namespace POVO.Backend.Services.Polls
+namespace POVO.Backend.Application.Polls
 {
     public class PollService : IPollService
     {

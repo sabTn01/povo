@@ -1,4 +1,4 @@
-﻿namespace POVO.Backend.Domains.Polls
+﻿namespace POVO.Backend.Domain.Polls
 {
     public class Poll : BaseModel
     {

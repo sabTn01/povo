@@ -1,6 +1,6 @@
 ﻿using POVO.Backend.Infrastructure.Repositories;
 
-namespace POVO.Backend.Domains.Polls
+namespace POVO.Backend.Domain.Polls
 {
     public interface IPollRepository : IRepository<Poll>
     {

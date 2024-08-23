@@ -1,9 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using POVO.Backend.Domains.Polls;
+using POVO.Backend.Domain.Polls;
 using POVO.Backend.Infrastructure.Contexts;
 using POVO.Backend.Infrastructure.Exceptions;
-using System;
-using System.Drawing;
 
 namespace POVO.Backend.Infrastructure.Repositories.Polls
 {

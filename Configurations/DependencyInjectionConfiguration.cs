@@ -1,6 +1,6 @@
-﻿using POVO.Backend.Domains.Polls;
+﻿using POVO.Backend.Domain.Polls;
 using POVO.Backend.Infrastructure.Repositories.Polls;
-using POVO.Backend.Services.Polls;
+using POVO.Backend.Application.Polls;
 
 namespace POVO.Backend.Configurations
 {

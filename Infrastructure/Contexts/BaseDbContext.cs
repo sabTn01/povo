@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using POVO.Backend.Domains;
+using POVO.Backend.Domain;
 
 namespace POVO.Backend.Infrastructure.Contexts { 
     public abstract class BaseDbContext : DbContext

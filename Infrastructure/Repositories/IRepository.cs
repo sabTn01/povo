@@ -1,4 +1,4 @@
-﻿using POVO.Backend.Domains;
+﻿using POVO.Backend.Domain;
 
 namespace POVO.Backend.Infrastructure.Repositories
 {

@@ -1,7 +1,7 @@
-﻿using POVO.Backend.Domains.Polls;
+﻿using POVO.Backend.Domain.Polls;
 using POVO.Backend.Infrastructure.Dtos.Polls;
 
-namespace POVO.Backend.Services.Polls
+namespace POVO.Backend.Application.Polls
 {
     public interface IPollService
     {

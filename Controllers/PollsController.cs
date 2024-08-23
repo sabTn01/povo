@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using POVO.Backend.Services.Polls;
+using POVO.Backend.Application.Polls;
 using AutoMapper;
 using POVO.Backend.Infrastructure.Dtos.Polls;
 using Microsoft.AspNetCore.JsonPatch;
 using POVO.Backend.Infrastructure.Exceptions;
-using POVO.Backend.Domains.Polls;
+using POVO.Backend.Domain.Polls;
 
 namespace POVO.Backend.Controllers
 {

@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using POVO.Backend.Domains.Polls;
+using POVO.Backend.Domain.Polls;
 
 namespace POVO.Backend.Infrastructure.Contexts
 {

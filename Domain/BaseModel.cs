@@ -1,4 +1,4 @@
-﻿namespace POVO.Backend.Domains
+﻿namespace POVO.Backend.Domain
 {
     public class BaseModel
     {

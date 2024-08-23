@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.JsonPatch;
-using POVO.Backend.Domains.Polls;
+using POVO.Backend.Domain.Polls;
 using POVO.Backend.Infrastructure.Dtos.Polls;
 
 namespace POVO.Backend.Configurations
