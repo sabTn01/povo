@@ -1,5 +1,5 @@
 ﻿using POVO.Backend.Domain.Polls;
-using POVO.Backend.Infrastructure.Dtos.Polls;
+using POVO.Backend.Infrastructure.Extensions;
 
 namespace POVO.Backend.Application.Polls
 {
@@ -9,25 +9,6 @@ namespace POVO.Backend.Application.Polls
         public PollService(IPollRepository pollRepository)
         {
             _pollRepository = pollRepository;
-        }
-
-        public async Task<Poll> CreatePoll(PollCreateUpdateInput request)
-        {
-            var validRequest = await ValidatePoll(request);
-
-            if (!validRequest) throw new Exception("Not Valid reuqest");
-
-            var poll = new Poll
-            {
-                Title = request.Title,
-                Description = request.Description,
-                ExpiryDate = request.ExpiryDate,
-                Options = request.Options.Select(o => new PollOption { OptionText = o.OptionText }).ToList()
-            };
-
-            var response = await SaveChanges(poll);
-
-            return response;
         }
 
         public Task<IQueryable<Poll>> List()
@@ -42,6 +23,7 @@ namespace POVO.Backend.Application.Polls
 
         public Task<Poll> SaveChanges(Poll poll)
         {
+            ValidatePoll(poll);
             return InsertOrUpdate(poll);
         }
 
@@ -54,18 +36,11 @@ namespace POVO.Backend.Application.Polls
             return poll;
         }
 
-        private Task<bool> ValidatePoll(PollCreateUpdateInput request)
+        private void ValidatePoll(Poll newPoll)
         {
-            var valid = true;
-            if (string.IsNullOrWhiteSpace(request.Title) || 
-                string.IsNullOrWhiteSpace(request.Description) || 
-                !(request.ExpiryDate != DateTime.MinValue) || 
-                request.Options.Count == 0)
-            {
-                valid = false;
-            }
+            var validator =  new PollValidator();
 
-            return Task.FromResult(valid);
+            validator.ValidateAndThrowEntityValidation(newPoll);
         }
 
         public Task Delete(Poll poll)

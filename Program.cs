@@ -9,7 +9,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Configure Logging
 builder.Host.UseSerilog((context, configuration) => configuration.ReadFrom.Configuration(context.Configuration));
 
-
 // Configure Options
 var povoConfigurationOptions = builder.Configuration.GetSection("Povo").Get<PovoConfigurationOptions>();
 builder.Services.Configure<PovoConfigurationOptions>(builder.Configuration.GetSection("Povo"));

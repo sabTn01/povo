@@ -2,7 +2,6 @@
 using POVO.Backend.Application.Polls;
 using AutoMapper;
 using POVO.Backend.Infrastructure.Dtos.Polls;
-using Microsoft.AspNetCore.JsonPatch;
 using POVO.Backend.Infrastructure.Exceptions;
 using POVO.Backend.Domain.Polls;
 
@@ -42,10 +41,11 @@ namespace POVO.Backend.Controllers
         [HttpPost]
         public async Task<PollViewOutput> Create([FromBody] PollCreateUpdateInput request)
         {
-            var newPoll = await _pollService.CreatePoll(request);
+            var mappedInput = _mapper.Map(request, new Poll());
+            var newPoll = await _pollService.SaveChanges(mappedInput);
 
-            var mapped = _mapper.Map(newPoll, new PollViewOutput());
-            return mapped;
+            var mappedNewPoll = _mapper.Map(newPoll, new PollViewOutput());
+            return mappedNewPoll;
         }
 
         [HttpPut("{guid:Guid}")]
