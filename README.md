@@ -1,8 +1,9 @@
-# POVO Web Application
+# POVO API
 
 ## Overview
 
-POVO is a web application designed to manage votes and polls for employees within an organization. Built with a .NET 7 backend, it provides a secure and user-friendly platform to facilitate efficient voting processes. 
+POVO is a web application designed to manage votes and polls for employees within an organization. Built with a .NET 7 API and a REACT 18 frontend (https://github.com/sabTn01/povo.front).
+it provides a secure and user-friendly platform to facilitate efficient voting processes. 
 
 ## Features
 
